@@ -74,18 +74,18 @@ class Snake extends React.Component <any, any>{
         for(var y = 0; y < this.state.height; y++) {
             for(var x = 0; x < this.state.width; x++) {
                 if(y === this.state.food.y && x === this.state.food.x) {
-                    grid.push("🍎")
+                    grid.push("🥩")
                     continue
                 }
                 var flag = true
                 for(var i = 0; i < this.state.snake.length; i++) {
                     if (y === this.state.snake[i].y && x === this.state.snake[i].x) {
-                        grid.push("🟩")
+                        grid.push("⬛️")
                         flag = false
                     }
                 }
                 if (flag) {
-                    grid.push("🟫")
+                    grid.push("⬜️")
                 }
             }
             grid.push(<br/>)
@@ -133,17 +133,17 @@ class Snake extends React.Component <any, any>{
     render() {
         return (
             <div>
-                <p>Snake</p>
+                <h1>Snake</h1>
                 <br/>
-                <p>{this.state.score}</p>
+                <h1>{this.state.score}</h1>
                 {this.drawGrid()}
                 <br />
-                <button onClick={this.newGame}>✔️</button>
-                <button onClick={() => this.move("left")}>⬅️</button>
-                <button onClick={() => this.move("up")}>⬆️</button>
-                <button onClick={() => this.move("down")}>⬇️</button>
-                <button onClick={() => this.move("right")}>➡️</button>
-                <button onClick={this.gameOver}>❌</button>
+                <button onClick={this.newGame}>New Game</button>
+                <button onClick={() => this.move("left")}>◀️</button>
+                <button onClick={() => this.move("up")}>🔼</button>
+                <button onClick={() => this.move("down")}>🔽</button>
+                <button onClick={() => this.move("right")}>▶️</button>
+                <button onClick={this.gameOver}>End Game</button>
                 <br />
                 <br />
             </div>
